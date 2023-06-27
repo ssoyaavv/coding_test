@@ -1,0 +1,7 @@
+N = list(map(int, list(input())))
+N = [x for x in N if x>0]
+
+output = 1
+for i in N : 
+    output *= int(i) 
+print(output)
