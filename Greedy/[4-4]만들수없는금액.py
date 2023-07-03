@@ -10,14 +10,19 @@ if N_list[0] > 1 :
 else : 
     for i in range(len(N_list)): # 몇 개의 숫자를 더할 것인가
         for j in range(len(N_list)-i+1) : 
-            tmp = 0
+            tmp = N_list[0]
             for z in range(i) : 
                 tmp += N_list[j+z]
             output_list.append(tmp)
 
     output_list = list(set(output_list))
-
+    print(output_list)
+    tmp = 0
     for i in range(len(output_list)-1):
         if (output_list[i+1]- output_list[i]) > 1 :
             print(output_list[i]+1)
-            break 
+            tmp = 1
+            break
+    
+    if tmp == 0 :
+        print(output_list[0] + output_list[-1])
